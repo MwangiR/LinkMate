@@ -1,4 +1,4 @@
-const { User, Thought } = require("../models");
+const { User, Thought } = require('../models');
 
 module.exports = {
   async getUsers(req, res) {
@@ -15,7 +15,7 @@ module.exports = {
       const user = await User.findOne({ _id: req.params.id });
 
       if (!user) {
-        return res.status(404).json({ message: "No user with that ID" });
+        return res.status(404).json({ message: 'No user with that ID' });
       }
       res.status(200).json(user);
     } catch (err) {
@@ -25,7 +25,7 @@ module.exports = {
   },
   async createUser(req, res) {
     try {
-      const user = await User.create(req.body);
+      const user = await User.create({ username: req.body.username, email: req.body.email });
       res.status(200).json(user);
     } catch (err) {
       console.log(err);
