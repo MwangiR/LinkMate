@@ -65,10 +65,68 @@ const users = [
   },
 ];
 
+// const seedThoughts = [
+//   {
+//     thoughtText: "This is thought 1.",
+//     username: "John Doe",
+//     reactions: [],
+//   },
+//   {
+//     thoughtText: "Another random thought here.",
+//     username: "Jane Smith",
+//     reactions: [],
+//   },
+//   {
+//     thoughtText: "Thinking about the future.",
+//     username: "Michael Johnson",
+//     reactions: [],
+//   },
+//   {
+//     thoughtText: "Random musings and ideas.",
+//     username: "Emily Wilson",
+//     reactions: [],
+//   },
+//   {
+//     thoughtText: "Deep thoughts on a sunny day.",
+//     username: "David Brown",
+//     reactions: [],
+//   },
+//   {
+//     thoughtText: "Reflecting on life's journey.",
+//     username: "Sarah Lee",
+//     reactions: [],
+//   },
+//   {
+//     thoughtText: "Random thought number 7.",
+//     username: "Robert Taylor",
+//     reactions: [],
+//   },
+//   {
+//     thoughtText: "Contemplating the universe.",
+//     username: "Linda Clark",
+//     reactions: [],
+//   },
+//   {
+//     thoughtText: "A thought about the past.",
+//     username: "William Hall",
+//     reactions: [],
+//   },
+//   {
+//     thoughtText: "Feeling inspired today.",
+//     username: "Maria Davis",
+//     reactions: [],
+//   },
+// ];
+
 connection.once("open", async () => {
   console.log("connected...");
+
   await User.deleteMany({});
+  await Thought.deleteMany({});
+
   await User.collection.insertMany(users);
+  // await Thought.collection.insertMany(seedThoughts);
+
   console.log("all done!");
   process.exit(0);
 });
