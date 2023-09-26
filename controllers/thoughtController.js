@@ -64,4 +64,19 @@ module.exports = {
       res.status(500).json(err);
     }
   },
+  async deleteThought(req, res) {
+    try {
+      const thought = await Thought.findOneAndDelete({ _id: req.params.id });
+      if (!thought) {
+        return res.status(404).json({ message: 'No thought with that ID' });
+      }
+      // remove the thought from all users associated to it
+      await User.updateMany({ thoughts: req.params.id }, { $pull: { thoughts: req.params.id } });
+
+      res.status(200).json({ message: 'Thought Deleted', thought });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  },
 };
