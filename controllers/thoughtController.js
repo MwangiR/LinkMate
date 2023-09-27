@@ -42,7 +42,7 @@ module.exports = {
         });
       }
 
-      res.status(200).json(thought);
+      res.status(200).json({ message: 'Thought Posted', thought });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
@@ -74,6 +74,26 @@ module.exports = {
       await User.updateMany({ thoughts: req.params.id }, { $pull: { thoughts: req.params.id } });
 
       res.status(200).json({ message: 'Thought Deleted', thought });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  },
+  async addReaction(req, res) {
+    try {
+      const thought = await Thought.findOneAndUpdate(
+        { _id: req.params.thoughtId },
+        {
+          $addToSet: {
+            reactions: { reactionBody: req.body.reactionBody, username: req.body.username },
+          },
+        },
+        { new: true },
+      );
+      if (!thought) {
+        return res.status(404).json({ message: 'No thought with that ID' });
+      }
+      res.status(200).json({ message: 'Added Reaction', thought });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
