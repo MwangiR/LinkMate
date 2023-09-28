@@ -134,7 +134,7 @@ Make sure to replace `:id` with the actual IDs you want to interact with.
 
 ## Usage
 
-Interact with the database through API endpoints using tools like Insomnia or MySQL shell.
+Interact with the database through API endpoints using tools like Insomnia or mongodb shell.
 
 ## Contribution Guidelines
 
