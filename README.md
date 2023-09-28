@@ -129,8 +129,8 @@ Make sure to replace `:id` with the actual IDs you want to interact with.
 
 ## Features
 
-- Manage e-commerce backend with Express routing.
-- GET, POST, PUT, and DELETE routes for categories, products, and tags.
+- Manage social network backend with Express routing.
+- GET, POST, PUT, and DELETE routes for users, thoughts, reactions and friends.
 
 ## Usage
 
