@@ -26,7 +26,7 @@ Developers and testers can employ tools like Postman to interact with the API en
 
 ## Live Screen Recording
 
-Watch a live demonstration of the application's functionality [here](https://us04web.zoom.us/clips/share/BHVzMDQgSnMKIXFMcpc3HXiXUO5KcfPC-ReePG5QWw3Dm71TDng).
+Watch a live demonstration of the application's functionality [here](https://us04web.zoom.us/clips/share/BHVzMDQgMUcwqS350JhidpA8RkJy01NUYsjUr-WLfc3HjeZwATQ).
 
 ## Screenshots
 
@@ -101,7 +101,7 @@ Once the server is up and running, you can test the functionality of the applica
 
 Here are a few example API routes you can test:
 
-##### USERS
+##### Users
 
 - GET `/api/users`
 - POST `/api/users`
